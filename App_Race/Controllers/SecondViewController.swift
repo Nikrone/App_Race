@@ -14,15 +14,17 @@ class SecondViewController: UIViewController {
     @IBOutlet weak var imageViewCar: UIImageView!
     @IBOutlet weak var imageViewTree: UIImageView!
     @IBOutlet weak var leftConstraintCar: NSLayoutConstraint!
-    @IBOutlet weak var rightConstraintCar: NSLayoutConstraint!
-
+    
+    var carPosition: PositionCar = .center
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         buttonLeft.layer.cornerRadius = 15
         buttonRight.layer.cornerRadius = 15
         
     }
-
+    
     @IBAction func buttonPressedSecondViewController(_ sender: UIButton) {
         navigationController?.popViewController(animated: true)
     }
@@ -36,17 +38,38 @@ class SecondViewController: UIViewController {
     }
     
     func leftCar() {
-    UIView.animate(withDuration: 1) {
-        self.leftConstraintCar.constant = -110
-        self.view.layoutIfNeeded()
-        }
+        carPosition = .left
+        animateCar()
     }
     
     func rightCar() {
+        carPosition = .right
+       animateCar()
+    }
+    
+    func animateCar() {
         UIView.animate(withDuration: 1) {
-            self.rightConstraintCar.constant = -100
+            self.leftConstraintCar.constant = self.carPosition.offset
             self.view.layoutIfNeeded()
         }
-    
     }
+    
+
+    enum PositionCar {
+        case left
+        case center
+        case right
+        
+        var offset: CGFloat {
+            switch self {
+            case .left:
+                return UIScreen.main.bounds.width/2
+            case .right:
+                return UIScreen.main.bounds.width/2
+            case .center:
+                return UIScreen.main.bounds.width/2
+            }
+        }
+    }
+    
 }

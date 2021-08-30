@@ -167,7 +167,6 @@
                             <constraint firstItem="kA6-BF-5vA" firstAttribute="leading" secondItem="fqa-gf-LMg" secondAttribute="leading" constant="170" id="dOa-BA-4g1"/>
                             <constraint firstItem="kA6-BF-5vA" firstAttribute="centerX" secondItem="fqa-gf-LMg" secondAttribute="centerX" id="hZa-Ki-Af6"/>
                             <constraint firstItem="MhV-mH-wBz" firstAttribute="leading" secondItem="m1W-T6-Wvv" secondAttribute="leading" constant="16" id="i3j-mT-KDm"/>
-                            <constraint firstAttribute="trailing" secondItem="kA6-BF-5vA" secondAttribute="trailing" constant="170" id="l2Q-ju-ldL"/>
                             <constraint firstItem="OND-pa-ZUb" firstAttribute="top" secondItem="fqa-gf-LMg" secondAttribute="top" constant="35" id="mzW-y3-dQZ"/>
                             <constraint firstItem="xkv-N6-AgC" firstAttribute="leading" secondItem="fqa-gf-LMg" secondAttribute="leading" constant="113.66666666666669" id="n6k-IA-ghs"/>
                             <constraint firstItem="Iqd-A9-Rkh" firstAttribute="top" secondItem="S5N-fU-Kyv" secondAttribute="bottom" id="nsz-AZ-RpH"/>
@@ -188,7 +187,6 @@
                         <outlet property="imageViewCar" destination="kA6-BF-5vA" id="RCh-rp-x0v"/>
                         <outlet property="imageViewTree" destination="MhV-mH-wBz" id="iPO-Dr-jAv"/>
                         <outlet property="leftConstraintCar" destination="dOa-BA-4g1" id="BOE-8o-cmU"/>
-                        <outlet property="rightConstraintCar" destination="l2Q-ju-ldL" id="QAf-R2-aNf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Ne-2C-05G" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
