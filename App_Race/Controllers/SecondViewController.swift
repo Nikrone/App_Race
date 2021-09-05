@@ -16,6 +16,9 @@ class SecondViewController: UIViewController {
     @IBOutlet weak var centerConstraintCar: NSLayoutConstraint!
     @IBOutlet weak var centerConstraintTree: NSLayoutConstraint!
     @IBOutlet weak var topConstraintTree: NSLayoutConstraint!
+    @IBOutlet private weak var roadView: UIView!
+    
+    private let carAppearanceTimeInterval: TimeInterval = 1
     
     var carPosition: Position = .center {
         didSet {
@@ -28,11 +31,32 @@ class SecondViewController: UIViewController {
         }
     }
     
+    var treePosition: Position = .center {
+        didSet {
+            self.centerConstraintTree.constant = self.carPosition.offset
+            self.view.layoutSubviews()
+            self.topConstraintTree.constant = 0
+            UIView.animate(
+                withDuration: Constants.defaultAnimationDuretion,
+                delay: Constants.defaultAnimationDuretion
+            ) {
+                self.topConstraintTree.constant = self.view.frame.height
+                self .view.layoutSubviews()
+            }
+        }
+    }
+    
     override func viewDidLoad() {
-        super.viewDidLoad()
-        buttonLeft.layer.cornerRadius = 15
-        buttonRight.layer.cornerRadius = 15
-        
+        moveTreeToRandomPlace()
+    }
+    
+    func moveTreeToRandomPlace() {
+        Timer.scheduledTimer(
+            withTimeInterval: carAppearanceTimeInterval,
+            repeats: true
+            ) { _ in
+            self.treePosition = Position.allCases.randomElement()
+        }
     }
     
     @IBAction private func  buttonPressedSecondViewController(_ sender: UIButton) {
