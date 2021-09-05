@@ -13,10 +13,20 @@ class SecondViewController: UIViewController {
     @IBOutlet weak var buttonRight: UIButton!
     @IBOutlet weak var imageViewCar: UIImageView!
     @IBOutlet weak var imageViewTree: UIImageView!
-    @IBOutlet weak var leftConstraintCar: NSLayoutConstraint!
+    @IBOutlet weak var centerConstraintCar: NSLayoutConstraint!
+    @IBOutlet weak var centerConstraintTree: NSLayoutConstraint!
+    @IBOutlet weak var topConstraintTree: NSLayoutConstraint!
     
-    var carPosition: PositionCar = .center
-    
+    var carPosition: Position = .center {
+        didSet {
+            UIView.animate(withDuration: Constants.defaultAnimationDuretion) {
+                self.centerConstraintCar.constant = self.carPosition.offset
+                self.view.layoutSubviews()
+            }
+            centerConstraintCar.constant = carPosition.offset
+            view.layoutSubviews()
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,51 +35,31 @@ class SecondViewController: UIViewController {
         
     }
     
-    @IBAction func buttonPressedSecondViewController(_ sender: UIButton) {
+    @IBAction private func  buttonPressedSecondViewController(_ sender: UIButton) {
         navigationController?.popViewController(animated: true)
     }
     
-    @IBAction func buttonPressedLeftSecondViewController(_ sender: UIButton) {
-        leftCar()
-    }
-    
-    @IBAction func buttonPressedRightSecondViewController(_ sender: UIButton) {
-        rightCar()
-    }
-    
-    func leftCar() {
-        carPosition = .left
-        animateCar()
-    }
-    
-    func rightCar() {
-        carPosition = .right
-       animateCar()
-    }
-    
-    func animateCar() {
-        UIView.animate(withDuration: 1) {
-            self.leftConstraintCar.constant = self.carPosition.offset
-            self.view.layoutIfNeeded()
+    @IBAction private func  buttonPressedLeftSecondViewController(_ sender: UIButton) {
+        switch carPosition {
+        case .right:
+            carPosition = .center
+        case .center:
+            carPosition = .left
+        case .left:
+            break
         }
     }
     
-
-    enum PositionCar {
-        case left
-        case center
-        case right
-        
-        var offset: CGFloat {
-            switch self {
-            case .left:
-                return UIScreen.main.bounds.width/2
-            case .right:
-                return UIScreen.main.bounds.width/2
-            case .center:
-                return UIScreen.main.bounds.width/2
-            }
+    @IBAction private  func buttonPressedRightSecondViewController(_ sender: UIButton) {
+        switch carPosition {
+        case .left:
+            carPosition = .center
+        case .center:
+            carPosition = .right
+        case .right:
+            break
         }
     }
+    
     
 }
