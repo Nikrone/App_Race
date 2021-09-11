@@ -19,7 +19,7 @@ class SecondViewController: UIViewController {
     @IBOutlet weak var roadView: UIView!
     
     
-    private let carAppearanceTimeInterval: TimeInterval = 1
+    var carAppearanceTimeInterval: TimeInterval = 1
     
     var carPosition: Position = .center {
         didSet {

@@ -26,9 +26,11 @@ class SettingsViewController: UIViewController {
         
     }
     
-    @IBAction func slider(_ sender: UISlider) {
+    @IBAction func slider(sender: AnyObject) {
+        
         let result = Int(round(100 * sender.value))
         percentLabel.text = "\(result)%"
+
     }
     
 }
