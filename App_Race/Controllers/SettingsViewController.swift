@@ -9,6 +9,9 @@ import UIKit
 
 class SettingsViewController: UIViewController {
     
+    @IBOutlet weak var percentLabel: UILabel!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -21,6 +24,11 @@ class SettingsViewController: UIViewController {
             self.navigationController?.pushViewController(firstViewController, animated: true)
         }
         
-        
     }
+    
+    @IBAction func slider(_ sender: UISlider) {
+        let result = Int(round(100 * sender.value))
+        percentLabel.text = "\(result)%"
+    }
+    
 }
