@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7126C9EA26ECDB3F003B8BD0 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7126C9E926ECDB3F003B8BD0 /* SettingsViewController.swift */; };
 		714E06FA26E542B200412DBB /* Position.swift in Sources */ = {isa = PBXBuildFile; fileRef = 714E06F926E542B200412DBB /* Position.swift */; };
 		714E06FC26E547FD00412DBB /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 714E06FB26E547FD00412DBB /* Constants.swift */; };
 		714E06FF26E5497C00412DBB /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 714E06FE26E5497C00412DBB /* UIView+Extensions.swift */; };
@@ -21,6 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7126C9E926ECDB3F003B8BD0 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		714E06F926E542B200412DBB /* Position.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Position.swift; sourceTree = "<group>"; };
 		714E06FB26E547FD00412DBB /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		714E06FE26E5497C00412DBB /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
@@ -93,6 +95,7 @@
 			children = (
 				71B1D08A26DB72BB00DC7BF6 /* FirstViewController.swift */,
 				71B1D09B26DB73EF00DC7BF6 /* SecondViewController.swift */,
+				7126C9E926ECDB3F003B8BD0 /* SettingsViewController.swift */,
 				714E06F926E542B200412DBB /* Position.swift */,
 			);
 			path = Controllers;
@@ -176,6 +179,7 @@
 				714E06FA26E542B200412DBB /* Position.swift in Sources */,
 				71B1D08926DB72BB00DC7BF6 /* SceneDelegate.swift in Sources */,
 				714E06FC26E547FD00412DBB /* Constants.swift in Sources */,
+				7126C9EA26ECDB3F003B8BD0 /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
