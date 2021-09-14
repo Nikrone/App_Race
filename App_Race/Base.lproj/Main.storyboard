@@ -284,6 +284,9 @@
                                         <real key="value" value="8"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="buttonPressedSaveChangeSlider:" destination="SFL-8U-WrQ" eventType="touchUpInside" id="j8U-ys-dYY"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="H9H-5B-w6w">
                                 <rect key="frame" x="15.999999999999996" y="35" width="34.666666666666657" height="28.666666666666671"/>
@@ -296,48 +299,53 @@
                                     <action selector="buttonPressedToFirstViewController:" destination="SFL-8U-WrQ" eventType="touchUpInside" id="2tE-dP-dxE"/>
                                 </connections>
                             </button>
-                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="tBG-mP-Lmh">
-                                <rect key="frame" x="18" y="168" width="354" height="31"/>
-                                <connections>
-                                    <action selector="slider:" destination="SFL-8U-WrQ" eventType="valueChanged" id="9N0-On-yrH"/>
-                                </connections>
-                            </slider>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Сложность игры" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3R1-nv-izk">
                                 <rect key="frame" x="16" y="130" width="164" height="28"/>
                                 <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="50%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PCm-0Z-Aea">
-                                <rect key="frame" x="327" y="130" width="43" height="28"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PCm-0Z-Aea">
+                                <rect key="frame" x="310" y="130" width="60" height="28"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="60" id="274-fE-vQy"/>
+                                    <constraint firstAttribute="height" constant="28" id="pgU-HT-aIX"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="OO7-cm-QhL">
+                                <rect key="frame" x="18" y="168" width="354" height="31"/>
+                                <connections>
+                                    <action selector="changeValueSpeed:" destination="SFL-8U-WrQ" eventType="valueChanged" id="bsV-WN-KYR"/>
+                                </connections>
+                            </slider>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="8Z3-XG-YT6"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="PCm-0Z-Aea" firstAttribute="top" secondItem="2AP-Hu-cf4" secondAttribute="bottom" constant="30" id="07C-e6-bb2"/>
-                            <constraint firstItem="8Z3-XG-YT6" firstAttribute="trailing" secondItem="PCm-0Z-Aea" secondAttribute="trailing" constant="20" id="0gc-Nz-RR3"/>
                             <constraint firstItem="8Z3-XG-YT6" firstAttribute="trailing" secondItem="2AP-Hu-cf4" secondAttribute="trailing" id="2Eu-NJ-PmL"/>
-                            <constraint firstItem="tBG-mP-Lmh" firstAttribute="top" secondItem="3R1-nv-izk" secondAttribute="bottom" constant="10" id="8pz-b8-Tuc"/>
                             <constraint firstItem="8Z3-XG-YT6" firstAttribute="trailing" secondItem="odw-06-pjN" secondAttribute="trailing" constant="50" id="9pn-Ga-jkt"/>
                             <constraint firstItem="odw-06-pjN" firstAttribute="bottom" secondItem="8Z3-XG-YT6" secondAttribute="bottom" id="G7y-N0-SBr"/>
-                            <constraint firstItem="tBG-mP-Lmh" firstAttribute="centerX" secondItem="cuK-PB-pzL" secondAttribute="centerX" id="MFt-56-ABh"/>
-                            <constraint firstItem="tBG-mP-Lmh" firstAttribute="leading" secondItem="8Z3-XG-YT6" secondAttribute="leading" constant="20" id="NGY-Ye-AXl"/>
+                            <constraint firstItem="OO7-cm-QhL" firstAttribute="centerX" secondItem="cuK-PB-pzL" secondAttribute="centerX" id="NMS-Hk-KIr"/>
                             <constraint firstItem="2AP-Hu-cf4" firstAttribute="top" secondItem="cuK-PB-pzL" secondAttribute="top" id="RhZ-xz-LBN"/>
                             <constraint firstItem="3R1-nv-izk" firstAttribute="leading" secondItem="8Z3-XG-YT6" secondAttribute="leading" constant="16" id="SOu-WX-YSK"/>
                             <constraint firstItem="2AP-Hu-cf4" firstAttribute="centerX" secondItem="cuK-PB-pzL" secondAttribute="centerX" id="Wal-b9-IDR"/>
+                            <constraint firstItem="8Z3-XG-YT6" firstAttribute="trailing" secondItem="PCm-0Z-Aea" secondAttribute="trailing" constant="20" id="X3N-CS-h1t"/>
                             <constraint firstItem="H9H-5B-w6w" firstAttribute="leading" secondItem="8Z3-XG-YT6" secondAttribute="leading" constant="16" id="YfL-Pd-YZZ"/>
-                            <constraint firstItem="8Z3-XG-YT6" firstAttribute="trailing" secondItem="tBG-mP-Lmh" secondAttribute="trailing" constant="20" id="dh6-G2-jLt"/>
+                            <constraint firstItem="OO7-cm-QhL" firstAttribute="top" secondItem="3R1-nv-izk" secondAttribute="bottom" constant="10" id="ajG-8u-qy3"/>
                             <constraint firstItem="3R1-nv-izk" firstAttribute="top" secondItem="2AP-Hu-cf4" secondAttribute="bottom" constant="30" id="gFb-X1-vBy"/>
                             <constraint firstItem="odw-06-pjN" firstAttribute="centerX" secondItem="cuK-PB-pzL" secondAttribute="centerX" id="ikf-QF-jYX"/>
+                            <constraint firstItem="8Z3-XG-YT6" firstAttribute="trailing" secondItem="OO7-cm-QhL" secondAttribute="trailing" constant="20" id="rxE-Fi-Omh"/>
                             <constraint firstItem="H9H-5B-w6w" firstAttribute="top" secondItem="cuK-PB-pzL" secondAttribute="top" constant="35" id="xUk-0G-Ms7"/>
+                            <constraint firstItem="OO7-cm-QhL" firstAttribute="leading" secondItem="8Z3-XG-YT6" secondAttribute="leading" constant="20" id="zDl-AQ-WHr"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="percentLabel" destination="PCm-0Z-Aea" id="WTd-5G-Wp7"/>
+                        <outlet property="percentLabel" destination="PCm-0Z-Aea" id="l1V-lo-JIm"/>
+                        <outlet property="slider" destination="OO7-cm-QhL" id="buB-v8-xmr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="s9d-X7-Omu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

@@ -19,7 +19,7 @@ class SecondViewController: UIViewController {
     @IBOutlet weak var roadView: UIView!
     
     
-    var carAppearanceTimeInterval: TimeInterval = 1
+    var carAppearanceTimeInterval: TimeInterval = 6
     
     var carPosition: Position = .center {
         didSet {
@@ -37,8 +37,9 @@ class SecondViewController: UIViewController {
             self.centerConstraintTree.constant = self.treePosition.offset
             self.topConstraintTree.constant = 0
             self.view.layoutSubviews()
-            
-            UIView.animate(withDuration: Constants.defaultAnimationDuretion, delay: Constants.defaultAnimationDuretion) {
+            let complicationTree = (UserDefaults.standard.value(forKey: Constants.speedKey) as? Int) ?? 50
+            let speedTree: TimeInterval = TimeInterval(Double(Constants.maximumSpeed) - (Double(complicationTree) * 0.03))
+            UIView.animate(withDuration: speedTree) {
                 self.topConstraintTree.constant = self.roadView.frame.height -
                     self.imageViewTree.frame.height
                 self .view.layoutSubviews()
@@ -87,6 +88,5 @@ class SecondViewController: UIViewController {
             break
         }
     }
-    
     
 }

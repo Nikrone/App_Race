@@ -9,4 +9,6 @@ import Foundation
 
 struct Constants {
     static let defaultAnimationDuretion: TimeInterval = 0.3
+    static let speedKey = "SpeedValue"
+    static let maximumSpeed = 5
 }
