@@ -28,7 +28,7 @@ class SettingsViewController: UIViewController {
     }
     
     @IBAction func changeValueSpeed(_ sender: UISlider) {
-        let speed = sender.value
+        let speed = sender.value * 100
         percentLabel.text = String(Int(speed)) + "%"
     }
     
